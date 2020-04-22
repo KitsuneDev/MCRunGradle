@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "me.gabrieltk"
-version = "1.0-SNAPSHOT"
+version = "1.1"
 
 repositories {
     mavenCentral()
@@ -69,9 +69,9 @@ pluginBundle {
         // first plugin
         "mcrun-server" {
             // id is captured from java-gradle-plugin configuration
-            displayName = "Prepares Minecraft Servers for debugging plugins"
+            displayName = "Prepares Minecraft Servers for debugging plugins. Useful for IDE Run Configurations."
             tags = listOf("minecraft", "spigot", "paper")
-            version = "1.0-SNAPSHOT"
+            version = "1.1"
         }
 
         // another plugin

@@ -61,6 +61,8 @@ internal fun Project.getConfig(): MCRunPluginExtension =
 open class RunPaperTask: DefaultTask() {
     @Input
     var paperBuild: String = "latest"
+
+    @Input
     var pluginFiles: List<String> = listOf()
 
     @TaskAction
@@ -89,6 +91,7 @@ open class RunPaperTask: DefaultTask() {
             #Fri Apr 17 18:21:23 BRT 2020
             eula=${project.getConfig().acceptEula}""".trimIndent()
         )
+        if (project.getConfig().acceptEula != true) print("Warning: Minecraft EULA has not been accepted at your build script. You can set \"acceptEula\" to true at the plugin config (MCRunPluginExtension)")
 
         val plugins = project.file("${project.buildDir}/paper/plugins/")
         plugins.mkdirs()
